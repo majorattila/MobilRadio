@@ -1,5 +1,4 @@
-<div class="preview__inner-2" style="padding: 10px 20px 299px;"><div class="cl-preview-section"><p style="font-weight: bold; font-size: 30pt;">MobilRadio - Android</p>
-</div><div class="cl-preview-section"><h2 id="bevezetés">Bevezetés</h2>
+<div class="preview__inner-2" style="padding: 10px 20px 299px;"><div class="cl-preview-section"><h1>MobilRadio - Android</h1>
 </div><div class="cl-preview-section"><p>Ez egy FM rádióalkalmazás, ami segítségével kihasználjuk a telefon által<br>
 biztosított rádióhallgatás lehetőségét. Ilyen fajta alkalmazásokra mindig is elég nagy kereslet volt. A fő célközönség én úgy gondolom, hogy lehet bárki, akinek szüksége van egy olyan alkalmazásra, ahol mind a telefon által elérhető, mint pedig az interneten rendelkezésre álló csatornát képes elérni.</p>
 </div><div class="cl-preview-section"><h2 id="főbb-funkciók">Főbb funkciók</h2>
