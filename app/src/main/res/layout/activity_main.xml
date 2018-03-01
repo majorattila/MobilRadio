@@ -51,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:textColor="#fff"
         android:textSize="12pt"
         android:textStyle="bold|italic"
         android:text="FM Radio"/>
@@ -76,7 +77,6 @@
         android:background="@drawable/channel"
         android:fontFamily="@font/orbitron"
         android:gravity="center"
-        android:shadowRadius="10dp"
         android:text="80.0"
         android:textAlignment="center"
         android:textColor="#fff"
@@ -112,7 +112,7 @@
         android:layout_alignBottom="@+id/progressBar"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="73dp"
-        android:background="@drawable/switch_off"
+        android:background="@drawable/toggle_switch"
         android:shape="oval">
 
     </Button>
@@ -130,13 +130,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:background="@drawable/left_arrow"/>
+            android:background="@drawable/left_arrow_xml"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:textColor="#fff"
             android:textSize="12pt"
             android:text="FM Rádió"/>
 
@@ -144,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="@drawable/right_arrow"/>
+            android:background="@drawable/right_arrow_xml"/>
 
     </RelativeLayout>
 
