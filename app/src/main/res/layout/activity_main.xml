@@ -58,6 +58,7 @@
 
 
         <Button
+            android:id="@+id/volume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_shape"
@@ -76,6 +77,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/channel"
         android:fontFamily="@font/orbitron"
+        android:id="@+id/TextViewChannelPanel"
         android:gravity="center"
         android:text="80.0"
         android:textAlignment="center"
@@ -83,10 +85,10 @@
         android:textSize="20pt" />
 
     <ImageButton android:id="@+id/favorite"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="76dp"
+        android:layout_height="75dp"
         android:layout_marginTop="165dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="3dp"
         android:layout_alignParentRight="true"
         android:background="@drawable/star"/>
 
@@ -106,7 +108,7 @@
         android:progressDrawable="@drawable/circular_progress_bar" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_toggle_switch"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_alignBottom="@+id/progressBar"
@@ -127,21 +129,24 @@
         android:layout_marginBottom="10dp">
 
         <Button
+            android:id="@+id/btn_previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:background="@drawable/left_arrow_xml"/>
 
         <TextView
+            android:id="@+id/TextViewChannelName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:textColor="#fff"
             android:textSize="12pt"
-            android:text="FM Rádió"/>
+            android:text="..............."/>
 
         <Button
+            android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
