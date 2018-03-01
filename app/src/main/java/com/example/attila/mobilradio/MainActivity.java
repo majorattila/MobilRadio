@@ -1,5 +1,8 @@
 package com.example.attila.mobilradio;
 
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -10,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import java.io.IOException;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,12 +27,17 @@ public class MainActivity extends AppCompatActivity {
     private boolean radioState;
     private Button volume;
 
+    private final static String stream = "http://stream.musicfm.hu:8000/musicfm.mp3";
+
+    MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         init();
+        startService();
         onClickListener();
     }
 
@@ -49,12 +58,18 @@ public class MainActivity extends AppCompatActivity {
         btn_toggle_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (MainActivity.this.radioState) {
-                    MainActivity.this.btn_toggle_switch.setBackgroundResource(R.drawable.switch_off);
+                if (radioState) {
+                    btn_toggle_switch.setBackgroundResource(R.drawable.switch_off);
                 } else {
-                    MainActivity.this.btn_toggle_switch.setBackgroundResource(R.drawable.switch_on);
+                    btn_toggle_switch.setBackgroundResource(R.drawable.switch_on);
                 }
-                MainActivity.this.radioState = !MainActivity.this.radioState;
+                radioState = !radioState;
+
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.pause();
+                } else {
+                    mediaPlayer.start();
+                }
             }
         });
 
@@ -97,4 +112,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void startService() {
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        mediaPlayer = new MediaPlayer();
+        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+            mediaPlayer.setDataSource("http://stream.musicfm.hu:8000/musicfm.mp3");
+            mediaPlayer.prepareAsync();
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    //mediaPlayer.start();
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
